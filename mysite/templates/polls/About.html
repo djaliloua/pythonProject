@@ -1,0 +1,36 @@
+{% extends "polls/base.html" %}
+{% load static %}
+
+{% block title %} <title>About </title> {% endblock %}
+
+{% block about %}
+<div class="mx-3">
+    <p>This is about us</p>
+</div>
+<div class="container mt-2">
+    <div class="row">
+        {% for profile in profiles %}
+        <div class="card m-2" style="width:256px">
+            {% if profile.photo %}
+            <img class="card-img-top" src={{profile.photo.url}} alt="Card image" style="width:100%">
+            {% else %}
+            <img class="card-img-top" src="" alt="Card image" style="width:100%">
+            {% endif %}
+            <div class="card-body">
+                <h4 class="card-title">{{profile.full_name}}</h4>
+                <p class="card-text">{{profile.description}}</p>
+            </div>
+            <div class="card-footer">
+                {% if profile.link %}
+                <p></p><a href="{{profile.link}}" class="btn btn-primary" target="_blank">See Profile</a></p>
+                {% else %}
+                <p></p><a href="#" class="btn btn-primary" target="_blank" style="width:100%">See Profile</a></p>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+{% endblock about %}

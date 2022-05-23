@@ -1,0 +1,31 @@
+{% extends "polls/base.html" %}
+{% load static %}
+
+{% block title %} <title> Contacts </title> {% endblock %}
+
+{% block contacts %}
+<div class="mt-2">
+    <p>Those are our Contacts</p>
+</div>
+
+<div class="container mt-4">
+    <h3>How can we help you?</h3>
+    <form method="post">
+        {% csrf_token %}
+        <div class="input-group">
+            <span class="input-group-text">From</span>
+            <input type="email" class="form-control" placeholder="Your Email" name="email">
+        </div>
+        <div class="input-group mt-3">
+            <span class="input-group-text">Subject</span>
+            <input type="text" class="form-control" placeholder="Your Email" name="subject">
+        </div>
+        <div class="input-group mt-3">
+            <span class="input-group-text">Description</span>
+            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Send</button>
+    </form>
+</div>
+
+{% endblock contacts %}

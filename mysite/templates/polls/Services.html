@@ -1,0 +1,14 @@
+{% extends "polls/base.html" %}
+{% load static %}
+
+{% block title %} <title> Services </title> {% endblock %}
+
+{% block service %}
+<form method="post" class="m-3">
+    {% csrf_token %}
+    <input type="number" name="x">
+    <input type="number" name="y">
+    <input type="submit" name="Add">
+</form>
+<p style="margin-left:15px">Results: {{results}}</p>
+{% endblock %}
