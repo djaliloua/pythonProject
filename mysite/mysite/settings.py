@@ -147,8 +147,4 @@ RECIPIENT_ADDRESS = env('RECIPIENT_ADDRESS')
 
 # send_mail("test", "This is our first mail through django app",settings.EMAIL_HOST_USER, [settings.RECIPIENT_ADDRESS])
 
-"""
-username: djalilou
-email: djaliloua@gmail.com
-pwd: 801490
-"""
+
